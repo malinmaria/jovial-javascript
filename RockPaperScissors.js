@@ -1,5 +1,5 @@
 //Rock Paper Scissors 
-//Exercise taken from Javascript course on www.codecademy.com
+//Exercise taken from JavaScript course on www.codecademy.com
 
 var userChoice = prompt(“Do you choose rock, paper or scissors.”);
 var computerChoice = Math.random();
