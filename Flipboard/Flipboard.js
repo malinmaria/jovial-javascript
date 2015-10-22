@@ -1,40 +1,43 @@
-//Rock Paper Scissors 
-//Exercise taken from JavaScript course on www.codecademy.com
+//Flipboard Project 
+//Project taken from JavaScript course on www.codecademy.com
 
-var userChoice = prompt(“Do you choose rock, paper or scissors.”);
-var computerChoice = Math.random();
-
-if(computerChoice < 0.34){
-    computerChoice = “rock”;
-}else if(computerChoice < 0.67){
-    computerChoice = “paper”;
-}else{
-    computerChoice = “scissors”;
-}console.log(“Computer: “ + computerChoice)
-
-var compare = function(choice1, choice2){
-    if(choice1 == choice2){
-        return “The result is a tie!”;
-    }else if(choice1 == “rock”){
-        if(choice2 == “scissors”){
-	    return “rock wins”
-	}else{
-	    return “paper wins”;
-	}
-    }else if(choice1 == “paper”){
-	if(choice2 == “rock”){
-	    return “paper wins”;
-	}else{
-	    return “scissors wins”;
-	}
-    }else if(choice1 == “scissors”){
-	if(choice2 == “paper”){
-	    return “scissors wins”;
-	}else{
-	    return “rock wins”;
-	}
+var main = function(){
+  $('.dropdown-toggle').click(function(){
+    $('.dropdown-menu').toggle();
+  }); 
+  $('.arrow-next').click(function(){
+    var currentSlide = $('.active-slide');
+    var nextSlide = currentSlide.next();
+    
+    var currentDot = $('.active-dot');
+    var nextDot = currentDot.next();
+    if(nextSlide.length == 0){
+        nextSlide = $('.slide').first();
+        nextDot = $('.dot').first();
     }
+    currentSlide.fadeOut(600).removeClass('active-slide');
+    nextSlide.fadeIn(600).addClass('active-slide');
+    
+    currentDot.removeClass('active-dot');
+    nextDot.addClass('active-dot');
+    
+  });
+  $('.arrow-prev').click(function(){
+     var currentSlide = $('.active-slide');
+     var prevSlide = currentSlide.prev();
+     var currentDot = $('.active-dot');
+     var prevDot = currentDot.prev()
+     if(prevSlide.length == 0){
+         prevSlide = $('.slide').last();
+         prevDot = $('.dot').last();
+     }
+     
+     currentSlide.fadeOut(600).removeClass('active-slide');
+     prevSlide.fadeIn(600).addClass('active-slide');
+     
+     currentDot.removeClass('active-dot');
+     prevDot.addClass('active-dot');
+  });
 }
-console.log(“The challenger has chosen “ + userChoice);
-console.log(“The computer has chosen “ + computerChoice);
-compare(userChoice, computerChoice);
+
+$(document).ready(main);
