@@ -1,0 +1,29 @@
+.clock{
+    background-color: #252525;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+}
+
+.clock .rotate {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 0;
+    left: 0;
+}
+
+.rotate .right {
+    display: none;
+    z-index: 11;
+}
+
+.clock .bg .clock .front {
+    width: 100px;
+    height: 200px;
+    background-color: #252525;
+    position: absolute;
+    top: 0;
+}
