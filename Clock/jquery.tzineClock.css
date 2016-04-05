@@ -27,3 +27,16 @@
     position: absolute;
     top: 0;
 }
+
+.clock .display {
+    /*holds number of sec, mins or hours*/
+    position: absolute;
+    width: 200px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    z-index: 20;
+    color: #F5F5F5;
+    font-size: 60px;
+    text-align: center;
+    top: 65px;
+    left: 0;
+}
