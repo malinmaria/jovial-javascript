@@ -1,4 +1,4 @@
-function($){
+(function($){
 
 	// A global object used by the functions of the plug-in:
 	var gVars = {};
@@ -22,10 +22,10 @@ function($){
 
 function setup(){
   //colors of the dials
-  var colors = [orange,blue,green];
+  var colors = ['orange','blue','green'];
 
   var tmp;
-  for(var = i=0; i < 3; i++){
+  for(var i=0; i < 3; i++){
     tmp = $('<div>').attr('class',colors[i]+' clock').html(
       '<div class="green clock"></div>'+
       '<div class="display"></div>'+
@@ -48,7 +48,7 @@ function setup(){
 
     //adding the dial as a global variable, available as gVars.colorName
     gVars[colors[i]] = tmp;
-  };
+  }
 
     setInterval(function(){
       var currentTime = new Date();
@@ -60,6 +60,7 @@ function setup(){
       animation(gVars.blue, m, 60);
       animation(gVars.orange, h, 24);
     },1000);
+  }
 
     function animation(clock,current,total){
 
@@ -68,6 +69,6 @@ function setup(){
     function rotateElement(element,angle){
 
     }
-}
+
 
 })(jQuery);
