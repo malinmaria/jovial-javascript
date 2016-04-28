@@ -51,8 +51,15 @@ function setup(){
   };
 
     setInterval(function(){
+      var currentTime = new Date();
+      var h = currentTime.getHours();
+      var m = currentTime.getMinutes();
+      var s = currentTime.getSeconds();
 
-    })
+      animation(gVars.green, s, 60);
+      animation(gVars.blue, m, 60);
+      animation(gVars.orange, h, 24);
+    },1000);
 
     function animation(clock,current,total){
 
