@@ -93,7 +93,13 @@ function setup(){
     }
 
     function rotateElement(element,angle){
+      //rotate element depending on browser
+      var rotate = 'rotate('+angle+'deg)';
 
+      if(element.css('MozTransform')!=undefined)
+          element.css('MozTransform',rotate);
+      else if(element.css('WebkitTransform')!=undefined)
+          element.css('WebkitTransform',rotate);
     }
 
 
