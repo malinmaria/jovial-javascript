@@ -63,6 +63,32 @@ function setup(){
   }
 
     function animation(clock,current,total){
+      //calc current angle
+      var angle = (360/total)*(current+1);
+      var element;
+
+      if(current==0){
+        //hide right half of background
+        clock.rotateRight.hide();
+
+        //resetting left part
+        rotateElement(clock.rotateLeft,0);
+      }
+      if(angle <= 180){
+        element = clock.rotateLeft;
+      }else{
+        //start rotating the right part
+        clock.rotateRight.show();
+        clock.rotateLeft.show();
+
+        rotateElement(clock.rotateLeft, 180);
+        element = clock.rotateRight;
+
+        angle = angle-180;
+      }
+      rotateElement(element,angle);
+      //setting text inside display element, starting with 0 if needed
+      clock.display.html(current<10 ? '0'+ current:current);
 
     }
 
