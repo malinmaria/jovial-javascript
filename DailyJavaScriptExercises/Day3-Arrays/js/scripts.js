@@ -16,11 +16,12 @@ const inventors = [
 // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
     //filter loops over every item in the array and keeps what you specify in your function
-const fifteen = inventors.filter(function(inventor){
-  if(inventor.year > 1499 && inventor.year < 1600){
-    return true;
-  } else {
-    return false;
-  }
-});
+const fifteen = inventors.filter(inventor => inventor.year > 1499 && inventor.year < 1600)
+
 console.table(fifteen);
+
+// Array.prototype.map()
+    // 2. Give us an array of the inventors' first and last names
+    //map modifies every item in array however specified, then returns them all
+const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
+console.log(fullNames);
