@@ -29,4 +29,19 @@ const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`
     // 3. Sort the inventors by birthdate, oldest to youngest
 const birthOrder = inventors.sort((a,b) => a.year > b.year ? 1 : -1);
 
- 
+// Array.prototype.reduce()
+    // 4. How many years did all the inventors live?
+    //reduce function takes a list of numbers and reduces it down to one numbers
+    //simpler than using for loop
+const totalYears = inventors.reduce((total, inventor) => {
+  return total + (inventor.passed - inventor.year);
+}, 0);
+console.log(totalYears);
+
+// 5. Sort the inventors by years lived
+// subtract year and passed from each inventor and sort that number from highest to lowest
+const oldest = inventors.sort(function(a,b){
+  inventorOne = a.passed - a.year;
+  inventorTwo = b.passed - b.year;
+  return inventorOne > inventorTwo ? -1 : 1;
+});
