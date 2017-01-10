@@ -51,15 +51,19 @@ const oldest = inventors.sort(function(a,b){
 const blvds = Array.from(document.querySelectorAll('.mw-category a'));
 
 //converting list of a links to list of text content inside each link
-const dem = blvds
-              .map(link => link.textContent);
-              .filter(blvdName => blvdName.includes('de'));
+// const dem = blvds
+//               .map(link => link.textContent);
+//               .filter(blvdName => blvdName.includes('de'));
 
 // 7. Reduce Exercise
 // Sum up the instances of each of these
 const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
 const transportation = data.reduce(function(obj, item){
-  console.log(item);
+  //setting initial obj to 0, then if they exist, they will be incremented
+  if(!obj[item]){
+    obj[item] = 0;
+  }
+  obj[item]++;
   return obj;
 }, {})
