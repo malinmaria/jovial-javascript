@@ -54,3 +54,12 @@ const blvds = Array.from(document.querySelectorAll('.mw-category a'));
 const dem = blvds
               .map(link => link.textContent);
               .filter(blvdName => blvdName.includes('de'));
+
+// 7. Reduce Exercise
+// Sum up the instances of each of these
+const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+const transportation = data.reduce(function(obj, item){
+  console.log(item);
+  return obj;
+}, {})
