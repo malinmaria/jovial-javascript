@@ -45,3 +45,12 @@ const oldest = inventors.sort(function(a,b){
   inventorTwo = b.passed - b.year;
   return inventorOne > inventorTwo ? -1 : 1;
 });
+
+// 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
+    // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+const blvds = Array.from(document.querySelectorAll('.mw-category a'));
+
+//converting list of a links to list of text content inside each link
+const dem = blvds
+              .map(link => link.textContent);
+              .filter(blvdName => blvdName.includes('de'));
