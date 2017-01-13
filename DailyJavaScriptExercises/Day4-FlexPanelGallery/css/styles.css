@@ -36,7 +36,20 @@ body {
   justify-content: center;
   align-items: center;
   display: flex;
+  transition: transform 0.5s;
 }
+
+.panel > *:nth-child(1) {
+  transform: translateY(-100%);
+}
+.panel > *:nth-child(3) {
+  transform: translateY(100%);
+}
+.panel.open-active > *:nth-child(1),
+.panel.open-active > *:nth-child(3) {
+  transform: translateY(0);
+}
+
 
 .panel p {
   text-transform: uppercase;
