@@ -1,0 +1,20 @@
+body {
+  background:#ffc600;
+  font-family: 'helvetica neue';
+  font-size: 2em;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.search-form {
+  margin: 50px auto;
+  width: 20%;
+}
+
+.search {
+  position: absolute;
+  border: 10px solid #e8e9ea;
+  font-size: 1.5em;
+  text-align: center;
+  left: 33%;
+}
