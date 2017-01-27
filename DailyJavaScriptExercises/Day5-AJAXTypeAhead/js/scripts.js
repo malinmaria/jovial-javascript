@@ -5,3 +5,11 @@ cities = [];
 fetch(endpoint)
   .then(blob => blob.json())
   .then(data => cities.push(...data));
+
+function findMatch(wordToMatch, cities){
+  return cities.filter(place => {
+    //need to figure out if what was typed matches to any city or state names
+    const regex = new RegExp(wordToMatch, 'gi'); //flags: g-global i-insensitive case
+    return place.city.match(regex) || place.state.match(regex);
+  })
+}
