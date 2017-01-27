@@ -12,9 +12,32 @@ body {
 }
 
 .search {
-  position: absolute;
+  margin: 0;
+  position: relative;
   border: 10px solid #e8e9ea;
   font-size: 1.5em;
   text-align: center;
-  left: 33%;
+  top: 10px;
+  left: -10%;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.suggestions {
+  margin: 0;
+  top: 0;
+  position: relative;
+}
+
+.suggestions li {
+  margin: 0;
+  padding: 20px;
+  width: 320px;
+  background: white;
+  list-style: none;
+  font-size: .5em;
+  border-bottom: 1px solid #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+  display: flex;
+  justify-content: space-between;
 }
