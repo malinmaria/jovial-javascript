@@ -16,7 +16,15 @@ function findMatch(wordToMatch, cities){
 
 //will be run whenever value in search box is changed
 function displayMatches(){
-  console.log(this.value);
+  const matchArray = findMatch(this.value, cities);
+  const html = matchArray.map(place => {
+    return `
+    <li>
+      ${place.city}, ${place.state}
+      ${place.population}
+    </li>`;
+  }).join('');
+  suggestions.innerHTML = html;
 }
 
 const searchInput = document.querySelector('.search');
