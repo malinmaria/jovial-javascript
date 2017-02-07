@@ -14,9 +14,17 @@ const people = [
 
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
-    //Some checks against every item in array
+    //Some checks against all item in array to find at least one true item to return true
     const isAdult = people.some(person => {
       const currentYear = (new Date()).getFullYear();
       return currentYear - person.year >= 19;
     });
     console.log({isAdult});
+
+    // Array.prototype.every() // is everyone 19 or older?
+    //Every checks all items, they all must be true to return true
+    const allAdults = people.every(person => {
+      const currentYear = (new Date()).getFullYear();
+      return currentYear - person.year >= 19;
+    });
+    console.log({allAdults});
