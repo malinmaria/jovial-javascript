@@ -16,6 +16,13 @@ let lastY = 0;
 function draw(e){
   if(!isDrawing) return; //stops fn from running when not moused down
   console.log(e);
+  ctx.beginPath();
+  //start from
+  ctx.moveTo(lastX, lastY);
+  //move to
+  ctx.lineTo(e.offsetX, e.offsetY);
+  ctx.stroke();
+  [lastX, lastY] = [e.offsetX, e.offsetY];
 };
 
 canvas.addEventListener('mousemove', draw);
