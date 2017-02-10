@@ -26,6 +26,10 @@ function draw(e){
 };
 
 canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('mousedown', () => isDrawing = true);
+//fixing continuos line, allows brush to start drawing from anywhere
+canvas.addEventListener('mousedown', (e) => {
+  isDrawing = true;
+  [lastX, lastY] = [e.offsetX, e.offsetY];
+});
 canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false);
