@@ -1,0 +1,12 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+}
+
+.player {
+  position: relative;
+  max-width: 750px;
+}
