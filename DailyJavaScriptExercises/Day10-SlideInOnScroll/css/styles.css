@@ -25,14 +25,15 @@ body {
 
 .slide-in {
   opacity: 0;
+  transition:all .5s;
 }
 
-.slide-in.align-right {
-  transform: translateX(30%) scale(.95);
+.align-right.slide-in {
+  transform: translateX(30%) scale(0.95);
 }
 
-.slide-in.align-left {
-  transform: translateX(-30%) scale(.95);
+.align-left.slide-in {
+  transform: translateX(-30%) scale(0.95);
 }
 
 .slide-in.active {
